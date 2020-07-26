@@ -1,0 +1,8 @@
+<h1>Clothe#show</h1>
+<%= @clothe.name %>
+<%= @clothe.price %>
+<%= @clothe.size  %>
+<% ap @clothe %>
+<% @clothe.photos.each do |photo| %>$
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>

@@ -1,0 +1,11 @@
+// other thing on clothe card is tailwind
+
+.position-10 {
+    opacity: 0;
+      bottom: 0rem;
+      transition: 0.3s
+    }
+
+  .clothe-card:hover .position-10{
+    opacity: 1;
+  }

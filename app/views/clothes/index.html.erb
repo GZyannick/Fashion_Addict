@@ -1,0 +1,11 @@
+<h1>Clothes#index</h1>
+<% @clothes.each do |clothe| %>
+    <%= clothe.name %>
+    <%= link_to  "Show", clothe_path(clothe) %>
+    <%= link_to  "Edit", edit_clothe_path(clothe) %>
+    <%= link_to  "Remove", clothe_path(clothe), method: :delete ,  data: { confirm: 'voulez vous supprimer ce contrats    ?' } %>
+<% end %>
+
+<div>
+    <%= link_to "Add", new_clothe_path %>
+</div>

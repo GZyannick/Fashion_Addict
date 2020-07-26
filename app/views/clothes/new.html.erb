@@ -1,0 +1,11 @@
+<%= simple_form_for(@clothe) do |f|%>
+    <%= f.input :name %>
+    <%= f.input :size , collection: ["XS", "S", "M", "L", "XL"], as: :check_boxes %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :category, collection: ["Men", "Women"], prompt: "Choose the category" %>
+    <%= f.input :genre , collection: ["Men", "Women"], prompt: "Choose a genre" %>
+    <%= f.input :discount, as: :boolean %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.button :submit, "Add"%>
+<% end %>

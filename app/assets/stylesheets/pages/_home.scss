@@ -1,0 +1,49 @@
+// Specific CSS for your home-page
+.background {
+    background-image: url(background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+}
+
+.fa-btn{
+    background: #2C2C2C;
+    padding: 10px 8px;
+    color: white;
+    font-weight: bold;
+    transition: 0.6s;
+    border: 5px solid rgba(255, 255, 255, 0.0);
+}
+
+.fa-btn:hover{
+    background: rgba(255, 255, 255, 0.0);
+    border: 5px solid #2C2C2C;
+}
+  
+  .semi-black{
+    color: #2C2C2C;
+    padding-top: 25%;
+  }
+
+  .no-decoration{
+    transition: 0.5s;
+  }
+  
+  .no-decoration:hover{
+    text-decoration: none;
+    color: #2C2C2C;
+    font-weight: bold;
+  }
+
+  .radioSize{
+    border: 3px solid #2C2C2C;
+    background: #2C2C2C;
+    color: white;
+    transition: 0.2s;
+  }
+
+
+  .radioSize:hover{
+    background: #fff;
+    color: #2C2C2C;
+  }

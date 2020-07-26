@@ -1,0 +1,40 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+.border-purple{
+  color: #6C63FF;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.bg-purple-transparancy{
+  background-color: rgba($color: #FAF1F1, $alpha: 1);
+}
+.bg-purple-text{
+  background-color: #6C63FF;
+}
+
+.text-purple{
+  color: #6C63FF;
+}
+
+.navbar-no-decoration{
+  transition: 0.5s;
+}
+
+.navbar-no-decoration:hover{
+  text-decoration: none;
+  color: #2C2C2C;
+  font-weight: bold;
+}
+.prata{
+  font-family: 'Prata', cursive;
+}
+

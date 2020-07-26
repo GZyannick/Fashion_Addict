@@ -1,0 +1,25 @@
+<div class="">
+    <div class="background w-100">
+        <div class="container">
+            <h1 class="text-4xl pb-16 font-bold w-2/5 semi-black">Lorem ipsum do dolor sit amet </h1>
+            <a href="" class="fa-btn no-decoration">SHOP NOW</a>
+        </div>
+    </div>
+    <div class="container mt-4 ">
+        <div class=" grid grid-flow-col grid-cols-3 grid-rows-3 gap-3  border-0">
+            <% @catalogs.each do |catalog| %>
+            <div class=" relative shadow-sm clothe-card"><%= link_to catalog_path(catalog) do %>
+                <%= cl_image_tag catalog.photos.first.key, height: 500, width: 400, crop: :fill %>
+            <% end %>
+            <div class="absolute w-100 position-10">
+                <div class=" d-flex bg-white justify-between p-2 py-4 align-center border-0">
+                <p class="ml-4"><%= catalog.name %></p>
+                <p class="mr-4"><%= catalog.price %> € </p>
+                </div>
+            </div>
+            </div>
+<% end %>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,65 @@
+<h1>Clothe#show</h1>
+
+<div class="container mt-16">
+    <div class="d-flex justify-between">
+        <div class="d-flex justfy-around">
+           <div>
+                 <% @clothe.photos.each do |photo| %>
+                <div class=" pr-2 pb-2">
+                   <%= cl_image_tag photo.key, height: 150 , width: 100, crop: :fill %>
+                </div>
+            <% end %>
+           </div>
+           <div>
+                <%= cl_image_tag @clothe.photos.first.key, height: 700, width: 500, crop: :fill %>
+           </div>
+        </div>
+
+        <div class="flex-1 mx-16">
+            <div class=" w-100">
+                <h1 class="text-2xl mx-2 px-10 py-4 font-bold"><%= @clothe.name %></h1>
+                <h2 class="text-m mx-2 px-10 py-4 font-bold">Prix :</h2>
+
+                <div class="d-flex align-center">
+                    <div><h2 class="text-m mx-2 px-10 py-4 font-bold" > <%= @clothe.price %> €</h2></div>
+                    <div><h2 class="text-m  px-16 py-4 ">Tva incluse </h2></div>
+                </div>
+            </div>
+
+            <%= simple_form_for(@clothe) do |f|%>
+                <h2 class="text-m mx-2 px-10 pt-4 font-bold">Taille :</h2>
+                <div class="d-flex align-center justify-center px-16 ">
+                <% @clothe.size.split(/\W+/).each do |letter| %>
+                    <% if letter != "" %><%=  %>
+                       <div> <%= f.radio_button :size, letter , class: "no-decoration   opacity-0", id: letter %> <label for="<%= letter %>" class="radioSize  font-bold  d-block px-3 py-2 mr-2"><%= letter %></label><br /></div>
+                    <% end %>
+                <% end %>
+                </div>
+                <%= f.button :submit, "AJOUTER AUX PANIER", class: "center fa-btn no-decoration mt-8 px-32 mx-auto text-center text-sm d-block"%>
+            <% end %>
+
+        </div>
+    </div>
+
+  
+
+</div>
+
+<!--    
+<% @clothe.photos.each do |photo| %>
+    <div class="d-flex flex-col mb-2">
+        <%= cl_image_tag photo.key, height: 110, width: 80, crop: :fill %>
+    </div>
+<% end %>
+
+
+<%= @clothe.name %>
+<%= @clothe.price %>
+<%= @clothe.size  %>
+<% ap @clothe %>
+
+
+-->
+<% @catalogs.each do |catalog|%>
+    <%= cl_image_tag catalog.photos.first.key, height: 400, width: 300, crop: :fill %>
+<% end %>
