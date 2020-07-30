@@ -35,15 +35,22 @@
     font-weight: bold;
   }
 
-  .radioSize{
-    border: 3px solid #2C2C2C;
-    background: #2C2C2C;
-    color: white;
-    transition: 0.2s;
-  }
+ .radioSize{
+   border: 3px solid #2C2C2C;
+   background: #2C2C2C;
+   color: white;
+   transition: 0.2s;
+ }
+ .radioSize:hover {
+   background: #fff;
+   color: #2C2C2C;
+ }
+ .radio-item:checked + .radioSize{
+  background: #fff;
+  color: #2C2C2C;
+ }
 
+  .bg-f5-500{
+    background: #f5f5f5;
 
-  .radioSize:hover{
-    background: #fff;
-    color: #2C2C2C;
   }
