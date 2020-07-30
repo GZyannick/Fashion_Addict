@@ -1,17 +1,20 @@
 <h1>Clothe#show</h1>
 
+
 <div class="container mt-16">
     <div class="d-flex justify-between">
         <div class="d-flex justfy-around">
            <div>
-                 <% @clothe.photos.each do |photo| %>
-                <div class=" pr-2 pb-2">
-                   <%= cl_image_tag photo.key, height: 150 , width: 100, crop: :fill %>
+                 <% @clothe.photos.each_with_index do |photo , index| %>
+                <div class=" pr-2 pb-2" data-controller="slider" data-index="<%= index %>">
+                   <div>
+                        <%= cl_image_tag photo.key, height: 150 , width: 100, crop: :fill , class: "test", data: {picture: "#{cl_image_tag photo.key, height: 700 , width: 500, crop: :fill }"} %>
+                   </div>
                 </div>
             <% end %>
            </div>
            <div>
-                <%= cl_image_tag @clothe.photos.first.key, height: 700, width: 500, crop: :fill %>
+                <%= cl_image_tag @clothe.photos.first.key, height: 700, width: 500, crop: :fill, id: "ExpandedImage" %>
            </div>
         </div>
 
@@ -70,3 +73,11 @@
 <% end %>
         </div>
     </div>
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<%= javascript_pack_tag 'picture' %>
