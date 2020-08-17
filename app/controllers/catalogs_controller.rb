@@ -1,6 +1,6 @@
 class CatalogsController < ApplicationController
     before_action :find_clothe_in_catalog , only: [:show]
-    
+    skip_before_action :authenticate_user!, only: [:index , :show]
     def index
         ap @catalogs = policy_scope(Clothe).take(9)
     end

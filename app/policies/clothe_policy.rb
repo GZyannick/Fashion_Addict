@@ -2,11 +2,7 @@ class ClothePolicy < ApplicationPolicy
 
   class Scope < Scope
     def resolve
-      if user.admin == true
         scope.all
-      else
-        false
-      end
     end
   end
 
