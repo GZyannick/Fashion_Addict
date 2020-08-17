@@ -2,19 +2,22 @@ class ClothesController < ApplicationController
     before_action :find_clothe , only: [:show, :edit, :update, :destroy]
 
     def index
-       @clothes = Clothe.all
+        @clothes = policy_scope(Clothe)
+        ap @clothes
     end
 
     def show
+        authorize @clothe
     end
 
     def new
         @clothe = Clothe.new
+        authorize @clothe
     end
 
     def create
         @clothe = Clothe.new(clothe_params)
-        ap @clothe
+        authorize @clothe
         if @clothe.save!
             redirect_to clothe_path(@clothe)
         else
@@ -24,9 +27,11 @@ class ClothesController < ApplicationController
     end
 
     def edit
+        authorize @clothe
     end
 
     def update
+        authorize @clothe
         if@clothe.update!(clothe_params)
             redirect_to clothe_path(@clothe), notice: 'This clothe was been updated'
         else
@@ -35,6 +40,7 @@ class ClothesController < ApplicationController
     end
 
     def destroy
+        authorize @clothe
         if @clothe.destroy
             redirect_to clothes_path
         else

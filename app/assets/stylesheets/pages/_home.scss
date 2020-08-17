@@ -6,6 +6,11 @@
     height: 90vh;
 }
 
+
+.navbar-fixed::after{
+  position: sticky;
+}
+
 .fa-btn{
     background: #2C2C2C;
     padding: 10px 8px;
@@ -53,4 +58,8 @@
   .bg-f5-500{
     background: #f5f5f5;
 
+  }
+
+  .body {
+    overflow: hidden;
   }

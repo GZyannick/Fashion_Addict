@@ -1,5 +1,6 @@
-<div class="bg-purple-transparancy z-20 fixed w-100">
-  <div class="container py-2">
+<div >
+  <div class="bg-purple-transparancy z-20 fixed w-100">
+    <div class="container py-2">
     <div class="d-flex justify-between align-center">
         <div class="">
           <a href="#" class=" text-xs navbar-no-decoration">FEMME</a>
@@ -9,7 +10,7 @@
           <%= link_to root_path ,class: 'navbar-no-decoration' do %>
             <h1 class="prata text-2xl">FashionAddict</h1>
           <% end %>
-       </div>
+      </div>
                 <div class="mx-4">
     <% if user_signed_in? %>
       <%= link_to "SE DECONNECTER", destroy_user_session_path, method: :delete, class: "text-xs navbar-no-decoration"%>
@@ -19,6 +20,7 @@
         </div>
     <% end %>   
 
+      </div>
     </div>
   </div>
   
